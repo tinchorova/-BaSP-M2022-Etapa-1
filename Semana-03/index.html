@@ -6,92 +6,125 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="tincho.rova@gmail.com">
         <title>Trackgenix</title>
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     </head>
     <body>
         <aside id="sidebar">
             <div>
                 <input type="text" placeholder="Search"
             </div>
-            <h2>Menu</h2>
+            <div  class="menu">
+                <p>
+                    Menu
+                </p>
+            </div>
             <ul class="menu-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Sign up</a></li>
                 <li><a href="#">Log in</a></li>
             </ul>
-            <h2>Get in touch</h2>
-            <p>
+            <div  class="menu">
+                <p>
+                Get in touch
+                </p>
+            </div>
+            <p class="p-54">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                  Accusantium reiciendis mollitia cupiditate explicabo amet sequi 
             </p>
-            <div>
+        
                 <div>
                     <img src="./images/mail.png">
-                    <p><a href=#>information@trackgenix.tld</a></p>
+                    <a href=#>information@trackgenix.tld</a>
                 </div>
                 <div>
                     <img src="./images/Home.png">    
-                    <p><a href="#">1234 Somewhere Road #8254
-                        Nashville, TN 00000-0000</a></p>
+                    <a href="#">1234 Somewhere Road #8254 Nashville, TN 00000-0000</a>
                 </div>
                 <div>
                     <img src="./images/phone.png">
-                    <p><a href="#">(000) 000-0000</a></p>
+                    <a href="#">(000) 000-0000</a>
                 </div>
-            </div>
+            
         </aside>
         <div class="conteiner">
             <header>
                 <div class="header">
-                    <nav>
+                    <span>
                         <img src="./images/burguer.svg" alt="burguer menu">
-                    </nav>
+                    </span>
                     <div>
                         <img src="./images/logo.jpg" alt="Trackgenix logo">
                     </div>
                 </div>
             </header>
             <main>
+            <section>
                 <h1>Welcome to Trackgenix!</h1>
-                <div>
-                    <h2>A free website for everyone at Trackgenix!</h2>
-                    <img src="./images/clock.png">
+                <div class="free-site">
+                    <span>A free website for everyone at Trackgenix!<span>
                 </div>
-                <p>
-                    Here, you can register the hours worked in any project
-                    for all employees, generate reports and much more.
-                </p>
-                <h2>What con you do?</h2>
                 <div>
-                    <h3>Record hours</h3>
-                    <img src="./images/record-hours.png">
-                    <p>
-                        Create, modify and delete projects and assign them to any employee/s
-                    </p>
-                    <h3>Generate reports</h3>
-                    <img src="./images/generate-reports.png">
-                    <p>
-                        Emit reports to have a better 
-                        view and understanding of all the projects
-                    </p>
-                    <h3>Manage resources</h3>
-                    <img src="./images/manage-resources.png">               
-                    <p>
-                        You will be able to see all the information you need to organize hours of work in the best way possible
-                    </p>
-                    <h3>Designate roles</h3>
-                    <img src="./images/designate-roles.png">
-                    <p>
-                    Establish which employee may have a certain role in the project
+                    <img src="./images/clock.png"  id="clock">
+                </div>
+                <div class="here">
+                    <p class="p-54">
+                        Here, you can register the hours worked in any project
+                        for all employees, generate reports and much more.
                     </p>
                 </div>
+                <div>
+                    <button class="learn-more">Learn More</button> 
+                </div>
+                <h2>What can you do?</h2>
+            </section>
+                <div class="wcyd">
+                    <div>
+                        <h3>Record hours</h3>
+                        <img src="./images/record-hours.png">
+                        <p>
+                            Create, modify and delete projects and assign them to any employee/s
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Generate reports</h3>
+                        <img src="./images/generate-reports.png">
+                        <p>
+                            Emit reports to have a better 
+                            view and understanding of all the projects
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Manage resources</h3>
+                        <img src="./images/manage-resources.png">               
+                        <p>
+                            You will be able to see all the information you need to organize hours of work in the best way possible
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Designate roles</h3>
+                        <img src="./images/designate-roles.png">
+                        <p>
+                        Establish which employee may have a certain role in the project
+                        </p>
+                    </div>
+                </div>
+                <section>
                 <h2>Why use trackgenix?</h2>
-                <ul>
-                    <li>Increase productivity</li>
-                    <li>Track your work</li>
-                    <li>Leadership and team management</li>
-                    <li>Company decisions</li>
-                </ul>
+                <div class="list">
+                    <ul>
+                        <li>Increase productivity</li>
+                        <li>Track your work</li>
+                        <li>Leadership and team management</li>
+                        <li>Company decisions</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="form">
                 <h2>Contact form</h2>
                 <form>
                     <div>
@@ -112,6 +145,7 @@
                         <textarea name="message"></textarea>
                         <input type="submit" name="ENVIAR">
                 </form>
+            </section>
             <!--Add img trackgenix history-->
                 <h3>Trackgenix History</h3>
                 <img src="./images/objetive.png">
