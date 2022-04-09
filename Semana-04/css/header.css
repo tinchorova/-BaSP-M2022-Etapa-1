@@ -1,5 +1,18 @@
-header{
+header{ 
     display:flex;
     justify-content: center;
-    
+    background-color: #EDEDED;
+    width: 100%;
+    border-bottom:  4px solid #B1D1A4;
+}
+
+header h2{
+    font-size: 40px;
+    color: #373867;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+header img{
+    justify-items: left;
 }
