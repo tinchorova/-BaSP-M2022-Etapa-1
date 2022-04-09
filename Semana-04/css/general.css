@@ -1,0 +1,22 @@
+h1{
+    font-size: 64px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+h2{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration:none;
+    color:#545454;
+
+}
+body{
+    background-color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
