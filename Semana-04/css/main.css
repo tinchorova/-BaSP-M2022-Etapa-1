@@ -1,0 +1,140 @@
+main{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    }
+h1{
+    font-size: 30px;
+    padding: 30px 18px 30px 18px;
+    color: #373867;
+}
+.h2{
+        margin-top: 15px;
+        border-bottom: 4px solid #B1D1A4;
+        color: #373867;
+        
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+h3{
+    font-size: 24px;
+    color: #373867;
+    font-weight: bold;
+}
+
+.free-site{
+        font-size: 28px;
+        font-style: italic; 
+        color: #373867;
+        padding: 0 125px 43px 17px;
+
+    }
+
+.here{
+    
+    font-size: 24px;
+    color: #373867;
+}
+
+.learn-more{
+    background-color: #B1D1A4;
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+/* SECTION WCYD*/
+
+.wcyd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wcyd div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+.wcyd div :nth-child(1){
+    order: 1
+}
+.wcyd div :nth-child(3){
+    order: 2
+}
+
+
+.wcyd p{
+    font-size: 18px;
+    color: #373867;
+}
+
+#why{
+    display: flex;
+    flex-direction: column;
+}
+
+#why h2{
+    display: flex;
+    justify-content: center;
+}
+
+.list{
+    display: flex;  
+    font-size: 18px;
+    color: #373867;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.list li{
+    padding: 20px 20px 30px 20px;
+    font-weight: bold;
+    list-style-type: '✓';
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    
+
+}
+
+.form label{
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group{
+    display: flex;
+     flex-direction: column;
+     align-content: center;   
+    padding: 20px;
+}
+
+.form-group-checkbox{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form-group input{
+    width: 317px;
+    height: 43px;
+}
+
+#history{
+    display: flex;
+    flex-direction: column;
+}
+
+#history p{
+    display: flex;
+    color: #373867;
+    padding: 24px 0 24px 0;
+}
