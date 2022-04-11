@@ -1,11 +1,12 @@
 header{ 
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #EDEDED;
     width: 100%;
     border-bottom:  4px solid #B1D1A4;
     position: fixed;
     margin-bottom: 20px;
+    z-index: 3;
 }
 
 header h2{
@@ -15,13 +16,11 @@ header h2{
     border-bottom: none;
 }
 
-header img{
-    align-self: left;
-}
+
 
 @media  only screen and (min-width: 600px){
     header{
-       justify-content: normal;
+       width: 75%;
     }
 
 }

@@ -17,12 +17,20 @@ a{
 body{
     background-color: #FFF;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
+
 @media  only screen and (min-width: 600px){
+    .conteiner{
+        width:73%;
+        margin-left: 27%;
+    }
     body{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
+
+   
 }
