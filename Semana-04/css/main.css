@@ -43,13 +43,15 @@ h3{
     font-style: italic; 
     color: #373867;
     margin: 0 125px 43px 17px;
-    opacity: 0.5;
+    width: 50%;
 }
 
 .here{
     font-size: 24px;
     color: #373867;
     margin-bottom: 20px;
+    margin-top: 30px;
+    opacity: 0.5;
 }
 
 .learn-more{
@@ -65,9 +67,9 @@ h3{
 .wcyd{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     padding-bottom: 40px;
-   
 }
 
 .wcyd div{
@@ -76,8 +78,6 @@ h3{
     flex-wrap: wrap;
     align-items: center;
     margin-top: 20px;
-    
-
 }
 .wcyd div :nth-child(1){
     order: 1
@@ -87,8 +87,6 @@ h3{
 }
 .wcyd div h3{
     border-bottom: none;
-    
-
 }
 
 .wcyd p{
@@ -148,10 +146,20 @@ form{
     display: flex;
     align-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    padding: 20px;
-  
+    width: 160px;
+    padding: 20px;  
 }
+
+.form-group textarea{
+    width: 320px;
+    height: 80px;
+}
+
+/*
+ul .checkbox input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}*/
 
 .form-group input{
     width: 317px;
@@ -194,4 +202,19 @@ form{
 
 .ordered-lists ol a{
     color:#373867;
+}
+
+
+@media  only screen and (min-width: 600px){
+    .container{
+        width: 75%;
+        justify-content: normal;
+        flex-wrap: wrap;
+    }
+
+    .wcyd{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 }
