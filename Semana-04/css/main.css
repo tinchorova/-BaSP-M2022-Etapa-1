@@ -4,24 +4,22 @@ main{
     font-family: 'Poppins', sans-serif;
     margin-left: 15px;
     margin-right: 15px;
-  
-    
+    flex-grow: 1;    
     }
+
 h1{
-    font-size: 30px;
+    font-size: 40px;
     padding: 30px 10px 30px 10px;
     color: #373867;
-    
-    
 }
+
 .h2{
     margin-top: 15px;
     border-bottom: 4px solid #B1D1A4;
     color: #373867;
-    
     font-weight: bold;
     font-size: 25px;
-    }
+}
 
 h3{
     border-bottom: 4px solid #B1D1A4;
@@ -35,7 +33,7 @@ h3{
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 40px;
-    
+    margin-top: 82px;
 }
 
 .welcome :nth-child(3){
@@ -47,22 +45,26 @@ h3{
     font-style: italic; 
     color: #373867;
     margin: 0 125px 43px 17px;
-    
 }
 
 .here{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 24px;
     color: #373867;
     margin-bottom: 20px;
     margin-top: 30px;
+}
+
+.here p{
     opacity: 0.5;
-    width: 50%;
 }
 
 .learn-more{
+    text-align: center;
     background-color: #B1D1A4;
     padding: 10px;
-    text-align: center;
     border-radius: 3px;
     margin-bottom: 15px;
 }
@@ -74,25 +76,32 @@ h3{
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    padding-bottom: 40px;
     justify-content: space-around;
+    padding-bottom: 40px;
 }
 
 .wcyd div{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
     align-items: center;
     margin-top: 20px;
     width: 35%;
 }
+
 .wcyd div :nth-child(1){
     order: 1
 }
+
 .wcyd div :nth-child(3){
-    order: 2
+    order: 2;
+    width: 50%;
 }
+
+.wcyd div :nth-child(4){
+    width: 50%;
+}
+
 .wcyd div h3{
     border-bottom: none;
 }
@@ -101,9 +110,8 @@ h3{
     font-size: 18px;
     color: #373867;
     text-align: center;
-    width:40%;
+    width: 200px;
     height: 30%; 
-    
 }
 
 #why{
@@ -117,10 +125,10 @@ h3{
 }
 
 .list{
-    display: flex;  
+    display: flex;
+    justify-content: center;
     font-size: 18px;
     color: #373867;
-    justify-content: center;
     margin-top: 15px;
 }
 
@@ -137,7 +145,6 @@ form{
     border: 1px solid #000;
     margin-top: 20px;
     margin-bottom: 30px;
-
 }
 
 .form label{
@@ -148,8 +155,8 @@ form{
 
 .form-group{
     display: flex;
-     flex-direction: column;
-     align-content: center;   
+    flex-direction: column;
+    align-content: center;   
     padding: 20px;
 }
 
@@ -180,13 +187,15 @@ ul .checkbox input{
 #history{
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #history p{
     display: flex;
+    text-align: center;
     color: #373867;
     padding: 24px 0 24px 0;
-    text-align: center;
 }
 
 .ordered-lists{
@@ -198,13 +207,12 @@ ul .checkbox input{
 .ordered-lists ol{
     display: flex;
     flex-direction: column;
-    padding: 15px 0 15px 0;
     align-items: center;
-    
+    padding: 15px 0 15px 0;
+
 }
 
 .ordered-lists ol li{
-   
     padding: 5px 0 5px 0;
     list-style-type: decimal;
     color:#373867;
@@ -218,14 +226,39 @@ ul .checkbox input{
 
 @media  only screen and (min-width: 600px){
     .container{
-        width: 75%;
         justify-content: normal;
         flex-wrap: wrap;
+        width: 75%;
     }
 
     .wcyd{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+    }
+
+
+    .ordered-lists{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media  only screen and (min-width: 1000px){
+    #contact-form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #contact-form div{
+        width: 40%;
+    }
+
+    .form-group-checkbox .checkbox{
+        display: flex;
+        flex-wrap: wrap;
+        width: 160px; 
     }
 }

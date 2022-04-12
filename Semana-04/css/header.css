@@ -2,11 +2,11 @@ header{
     display:flex;
     justify-content: space-around;
     background-color: #EDEDED;
+    position: fixed;
+    z-index: 3;
     width: 100%;
     border-bottom:  4px solid #B1D1A4;
-    position: fixed;
     margin-bottom: 20px;
-    z-index: 3;
 }
 
 header h2{
@@ -22,5 +22,4 @@ header h2{
     header{
        width: 75%;
     }
-
 }

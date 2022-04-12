@@ -7,30 +7,28 @@ h2{
     font-weight: bold;
     color: #373867;
     border-bottom: #B1D1A4 solid 2px;
-   
 }
 
 a{
     text-decoration:none;
     color:#545454;
 }
+
 body{
     background-color: #FFF;
     font-family: 'Roboto', sans-serif;
     width: 100%;
 }
 
-
 @media  only screen and (min-width: 600px){
     .conteiner{
         width:73%;
         margin-left: 27%;
     }
+
     body{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
-
-   
 }
