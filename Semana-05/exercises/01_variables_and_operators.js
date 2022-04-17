@@ -8,7 +8,7 @@ a = 1;
 b = 2;
 c = a + b;
 
-console.log("1.a = " + c)
+console.log(c)
 
 /* 1.b) Crear dos variables de tipo String y concatenarlas guardando el resultado en una 3er variable. */
 
