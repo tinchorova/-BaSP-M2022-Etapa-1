@@ -55,4 +55,4 @@ var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
 var mayo = meses.indexOf("Mayo");
 var noviembre = meses.indexOf("Noviembre");
 
-console.log(meses.slice(mayo, noviembre));
+console.log(meses.slice(mayo, noviembre+1));
