@@ -52,8 +52,8 @@ var palabra3, espacio, resultado3;
 
 palabra3 = "saxofon baritono";
 espacio = palabra3.indexOf(" ");
-resultado3 = palabra3.substring(0,1).toUpperCase() + palabra3.substring(1, espacio) + palabra3.substring(espacio, (espacio+1)) + 
-            palabra3.substring(espacio, (espacio+2)).toUpperCase() + palabra3.substring((espacio+2));
+resultado3 = palabra3.substring(0,1).toUpperCase() + palabra3.substring(1, espacio).toLowerCase() + palabra3.substring(espacio, (espacio+1)) + 
+            palabra3.substring(espacio, (espacio+2)).toUpperCase() + palabra3.substring((espacio+2)).toLowerCase();
 
 console.log(resultado3);
 
