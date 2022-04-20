@@ -6,7 +6,7 @@ variable, mostrando el valor de dicha variable en la consola del navegador.*/
 console.log("------------------");
 console.log("6.a");
 
-function suma (x,y){
+function suma (x, y){
     return (x + y);
 }
 
@@ -17,47 +17,47 @@ console.log(resultado);
  mostrar una alerta aclarando que uno de los parámetros tiene error y retornar el valor NaN como resultado.*/
 
 
- console.log("------------------");
- console.log("6.b");
+console.log("------------------");
+console.log("6.b");
 
- function sumaEnteros(x,y){
+function sumaEnteros(x, y){
     if((isNaN(x) || isNaN(y))){
-    return alert(NaN);
+        return alert(NaN);
     } else {
-      console.log(suma(x,y));
+        console.log(suma(x, y));
     }
 }
 sumaEnteros("f",4);
-
+sumaEnteros(2,3);
 
 /* 6.c) Crear una función validate integer que reciba un número como parámetro y devuelva verdadero si es un número entero.*/
 
 console.log("------------------");
 console.log("6.c");
 
-function validateInteger(z){
-    if(Number.isInteger(z)){
-        return (Number.isInteger(z));
-    }
+function validateInteger(num){
+    return Number.isInteger(num);
 }
-(validateInteger(2.5));
+
+console.log(validateInteger(2.5));
 
 
-/* 6.d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números sean enteros. 
+
+/* 6.d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números sean enteros.
 En caso que haya decimales mostrar un alerta con el error y retorna el número convertido a entero (redondeado).*/
 
 console.log("------------------");
 console.log("6.d");
 
-function validarSuma(x,y){
+function validarSuma(x, y){
     if (Number.isInteger(x) && Number.isInteger(y)){
-        sumaEnteros(x,y);
+        sumaEnteros(x, y);
     } else {
         console.log(Math.round(x + y));
         return alert("6.d" + " " + "Not an integer number");
     }
 }
-(validarSuma(2.1,3));
+validarSuma(2.1,3);
 
 // /* 6.e) Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga 
 // funcionando igual.*/
@@ -67,7 +67,7 @@ console.log("6.e");
 
 
 
-function lastValidation(x,y){
+function lastValidation(x, y){
     if (Number.isInteger(x) && Number.isInteger(y)){
         return console.log(+ (x + y));
     } else {
@@ -80,8 +80,7 @@ function sumaFinal(x, y){
     if((isNaN(x) || isNaN(y))){
         return alert(NaN);
     } else {
-        lastValidation(x,y);
+        lastValidation(x, y);
     }
 }
-
 sumaFinal(7,8.3);

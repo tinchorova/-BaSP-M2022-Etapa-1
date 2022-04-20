@@ -20,7 +20,7 @@ body{
     width: 100%;
 }
 
-@media  only screen and (min-width: 600px){
+@media  only screen and (min-width: 768px){
     .conteiner{
         width:73%;
         margin-left: 27%;
