@@ -1,0 +1,25 @@
+header{ 
+    display:flex;
+    justify-content: space-around;
+    background-color: #EDEDED;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    border-bottom:  4px solid #B1D1A4;
+    margin-bottom: 20px;
+}
+
+header h2{
+    font-size: 50px;
+    color: #373867;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+
+
+@media  only screen and (min-width: 768px){
+    header{
+       width: 75%;
+    }
+}
