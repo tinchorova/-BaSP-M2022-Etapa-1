@@ -1,23 +1,24 @@
 
-header{
+header {
     width: 100%;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;
+    height: 70%;
 }
 
-main button{
+main button {
     width: 150px;
     background-color: #B1D1A4;
     border-radius: 5%;
     text-decoration-color: #fff;
 }
-.conteiner{
+.conteiner {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -25,7 +26,37 @@ main button{
     margin-left: 0px;
 }
 
-.emailInput {
+form {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    border: none;
+}
+
+form div {
+    display: flex;
+
+    width: 300px;
+}
+
+/* form div :nth-child(1){
+    display: flex;
+    align-self: left;
+}
+
+form div :nth-child(2){
+    display: flex;
+    align-self: right;
+} */
+
+.email-input {
     width: 200px;
+}
+
+footer {
+    margin-top: auto;
 }
 
