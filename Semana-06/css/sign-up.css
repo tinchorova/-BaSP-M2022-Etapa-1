@@ -1,0 +1,82 @@
+body{
+    display: flex;
+}
+header {
+    width: 100%;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    /* height: 70%;
+    width: 100%; */
+}
+
+main h2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+main button {
+    width: 150px;
+    background-color: #B1D1A4;
+    border-radius: 5%;
+    text-decoration-color: #fff;
+}
+.conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+
+form {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    border: none;
+}
+
+form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* form div {
+    display: flex;
+
+    width: 300px;
+} */
+
+/* form div :nth-child(1){
+    display: flex;
+    align-self: left;
+}
+
+form div :nth-child(2){
+    display: flex;
+    align-self: right;
+} */
+
+.email-input {
+    display: flex;
+    width: 200px;
+}
+
+footer {
+    margin-top: auto;
+}
+
