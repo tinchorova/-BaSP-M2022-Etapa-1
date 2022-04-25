@@ -3,83 +3,86 @@ window.onload = function () {
     var pass = document.getElementById("pass-input");
     var myForm = document.getElementById("form-input");
     var button = document.getElementById("btn continue");
+    var span1 = document.getElementById("span1")
+    var span2 = document.getElementById("span2")
 
 
-    email.addEventListener('focus', emailFocusEvent )
-    email.addEventListener('blur', emailBlurEvent )
+    email.addEventListener('focus', emailFocusEvent)
+    email.addEventListener('blur', emailBlurEvent)
     pass.addEventListener('focus', passFocusEvent)
     pass.addEventListener('blur', passBlurEvent)
 
     myForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        validateEmail()
-        validatePass()
+        formValidation()
 
     })
 
-
-    function validateEmail(){
-
-        var log = email.value
-        var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)?$/;
-
-        if (log.match(regx)) {
-            //cambiar log por style de validacion
-            console.log("good");
-            return true
-        } else {
-            alert("You must insert a valid e-mail")
-            return false
-        }
-    }
-
-    function validatePass(){
-        var passVal = pass.value
-        var passRegx = /^(?=.*[0-9])(?=.*[a-z]).{8,32}$/
-
-        if (passVal.match(passRegx)){
-            return true
-        } else {
-            alert("Password must have more than 8 characters, and at least 1 number")
-        }
-}
-
-
-
-    function emailFocusEvent(){
-        email.placeholder = "";
-    }
+    //FUNCIONES
 
     function emailBlurEvent(){
-        var log = email.value
-        if (log == "") {
-            email.style.borderColor = "red";
-        } email.placeholder = "Email required"
 
-        validateEmail()
+        var log = email.value
+        var emailRegx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+        
+
+        if (log.match(emailRegx)) {
+            console.log("good")
+        } else {
+            span1.textContent = "invalid email"
+            span1.style.color = "red"
+            email.style.borderColor = "red"
+
+        }
     }
 
-
-
-    // button.addEventListener('click', validateEmail(), validatePass())
-
-    function passFocusEvent(){
-        pass.placeholder = ""
+    function emailFocusEvent(){
+        span1.textContent = ""
+        email.style.borderColor = ""
+        email.placeholder = ""
     }
 
     function passBlurEvent(){
-        if (pass.value == "") {
-            pass.style.borderColor = "red";
-        } pass.placeholder = "Password required"
 
-        validatePass()
+        var passValue = pass.value
+        var passRegx = /^(?=.*[0-9])(?=.*[a-z]).{8,32}$/
+
+        if (passValue.match(passRegx)) {
+            console.log("good")
+        } else {
+            span2.textContent = "invalid password"
+            span2.style.color = "red"
+            pass.style.borderColor = "red"
+        }
+    }
+
+    function passFocusEvent(){
+        span2.textContent = ""
+        pass.style.borderColor = ""
+        pass.placeholder = ""
+    }
+
+    function formValidation(){
+
+        var log = email.value
+        var emailRegx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+        var passValue = pass.value
+        var passRegx = /^(?=.*[0-9])(?=.*[a-z]).{8,32}$/
+        var logValidation = (log.match(emailRegx))
+        var passValidation = (passValue.match(passRegx))
+
+        if  (logValidation && passValidation){
+            alert("Log in successful!   " + "username: " +(log) + "   password: " + (passValue))
+        } else if (logValidation || passValidation) {
+            alert("Incorrect email or password")
+        }
     }
 
 
-    function submitForm(){
 
-    }
+
+
 
 
 
