@@ -19,13 +19,15 @@ window.onload = function () {
 
     })
 
+    
+
     //FUNCIONES
 
     function emailBlurEvent(){
 
         var log = email.value
         var emailRegx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
-        
+
 
         if (log.match(emailRegx)) {
             console.log("good")
@@ -77,6 +79,10 @@ window.onload = function () {
         } else if (logValidation || passValidation) {
             alert("Incorrect email or password")
         }
+
+
+
+
     }
 
 
