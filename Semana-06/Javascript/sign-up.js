@@ -13,7 +13,7 @@ window.onload = function (){
     var email = document.getElementById("email")
     var pass = document.getElementById("password")
     var repeatPass = document.getElementById("repeatPassword")
-    var btn = document.getElementById("btn continue")
+    var btn = document.getElementById("btnContinue")
     var myForm = document.getElementById("myForm")
 
     var firstNameb = false
@@ -98,7 +98,6 @@ window.onload = function (){
     function firstNameFocusEvent(){
         span1.textContent = ""
         firstName.style.borderColor = ""
-        firstName.placeholder = ""
     }
 
     //--
@@ -120,7 +119,7 @@ window.onload = function (){
     function lastNameFocusEvent(){
         span2.textContent = ""
         lastName.style.borderColor = ""
-        lastName.placeholder = ""
+
     }
 
     //----
@@ -284,12 +283,13 @@ window.onload = function (){
     //----
    
 
-    function localidadBlurEvent(va)
+
+    function localidadBlurEvent()
     {
 
         var letterC = 0;
 
-        var va2 = va.toLowerCase();
+        var va2 = document.getElementById("localidad").value.toLowerCase();
 
         for (var i = 0; i < va2.length; i++)
         {
@@ -381,7 +381,7 @@ window.onload = function (){
     }
 
     function emailFocusEvent(){
-        span19.textContent = ""
+        span10.textContent = ""
         email.style.borderColor = ""
         email.placeholder = ""
     }
@@ -439,34 +439,36 @@ window.onload = function (){
     btn.addEventListener('click', alertSubmit)
 
     function alertSubmit(){
+        var message = ""
+        var newLine = "\r\n"
+
         if ((firstNameb && lastNameb && dnib && dateb && phoneb && addressb &&
             localidadb && postCodeb && emailb && passb && repeatPassb) == true) {
             window.alert("Success!")
-        }else if (!firstNameb){
-            message += "First name is wrong"
-        }else if (!lastNameb){
-            message += "Last name is wrong"
-        }else if (!dnib){
-            message += "DNI is wrong"
-        }else if (!dateb){
-            message += "Date is wrong"
-        }else if (!phoneb){
-            message += "Phone is wrong"
-        }else if (!addressb){
-            message += "Address is wrong"
-        }else if (!localidadb){
-            message += "Localidad is wrong"
-        }else if (!postCodeb){
-            message += "Post code is wrong"
-        }else if (!emailb){
-            message += "Email is wrong"
-        }else if (!passb){
-            message += "Password is wrong"
-        }else if (!repeatPass){
-            message += "Passwords does not match"
-            window.alert(message)
-    }
+        }if (!firstNameb){
+            message += "First name is wrong" + newLine
+        }if (!lastNameb){
+            message += "Last name is wrong" + newLine
+        }if (!dnib){
+            message += "DNI is wrong" + newLine
+        }if (!dateb){
+            message += "Date is wrong" + newLine
+        }if (!phoneb){
+            message += "Phone is wrong" + newLine
+        }if (!addressb){
+            message += "Address is wrong" + newLine
+        }if (!localidadb){
+            message += "Localidad is wrong" + newLine
+        }if (!postCodeb){
+            message += "Post code is wrong" + newLine
+        }if (!emailb){
+            message += "Email is wrong" + newLine
+        }if (!passb){
+            message += "Password is wrong" + newLine
+        }if (!repeatPass){
+            message += "Passwords does not match" + newLine
 
+    }   window.alert(message)
 
 
 

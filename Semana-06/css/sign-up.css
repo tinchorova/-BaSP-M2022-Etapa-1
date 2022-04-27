@@ -5,6 +5,10 @@ header {
     width: 100%;
 }
 
+#sidebar{
+    display: flex;
+    z-index: -1;
+}
 
 main {
     display: flex;
@@ -13,8 +17,10 @@ main {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 70px;
+    margin-left: 33%;
     /* height: 70%;
     width: 100%; */
+    
 }
 
 main h2{
@@ -77,6 +83,15 @@ form div :nth-child(2){
 }
 
 footer {
+    display: flex;
+    justify-content: center;
     margin-top: auto;
+    z-index: 3;
 }
 
+@media  only screen and (max-width: 768px){
+
+    #sidebar{
+        display: none;
+    }
+}

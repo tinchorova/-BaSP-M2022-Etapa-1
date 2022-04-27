@@ -3,12 +3,21 @@ header {
     width: 100%;
 }
 
+body{
+    height:100%;
+}
+#sidebar{
+    display: flex;
+    z-index: -1;
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;
+    margin-left: 33%;
     height: 70%;
 }
 
@@ -20,9 +29,9 @@ main button {
 }
 .conteiner {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:  wrap;
     width: 100%;
-    height: 100%;
+    height: 70%;
     margin-left: 0px;
 }
 
@@ -57,6 +66,17 @@ form div :nth-child(2){
 }
 
 footer {
+    display: none;
+    /* flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: auto;
+    z-index: 3; */
 }
 
+@media  only screen and (max-width: 768px){
+
+#sidebar{
+    display: none;
+}
+}
