@@ -1,0 +1,34 @@
+h1{
+    font-size: 64px;
+    font-weight: bold;
+}
+h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: #373867;
+    border-bottom: #B1D1A4 solid 2px;
+}
+
+a{
+    text-decoration:none;
+    color:#545454;
+}
+
+body{
+    background-color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+@media  only screen and (min-width: 768px){
+    .conteiner{
+        width:73%;
+        margin-left: 27%;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
