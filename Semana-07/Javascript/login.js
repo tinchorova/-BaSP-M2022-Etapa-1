@@ -51,7 +51,6 @@ window.onload = function () {
         var passRegx = /^(?=.*[0-9])(?=.*[a-z]).{8,32}$/
 
         if (passValue.match(passRegx)) {
-            console.log("good")
         } else {
             span2.textContent = "invalid password"
             span2.style.color = "red"
@@ -74,15 +73,51 @@ window.onload = function () {
         var logValidation = (log.match(emailRegx))
         var passValidation = (passValue.match(passRegx))
 
-        if  (logValidation && passValidation){
-            alert("Log in successful!   " + "username: " +(log) + "   password: " + (passValue))
-        } else if (logValidation || passValidation) {
-            alert("Incorrect email or password")
-        }
+        // if  (logValidation && passValidation){
+        //     alert("Log in successful!   " + "username: " +(log) + "   password: " + (passValue))
+        // } else if (logValidation || passValidation) {
+        //     alert("Incorrect email or password")
+        // }
 
 
         // --------------------------- Week 07
 
+        // fetch("https://rickandmortyapi.com/api/character")
+        // .then(function (response) {
+        //     console.log (response)
+        //     return response.json()
+        // })
+        // .catch(function(error) {
+        //     console.log("Error: ", error)
+        // })
+
+
+        // var queryParams = "username=rose@radiumrocket.com&password=BaSP2022"
+
+        const urlApi = "https://basp-m2022-api-rest-server.herokuapp.com/login"
+
+        button.addEventListener("click", submitClick)
+
+        function submitClick(e){
+            (e).preventDefault
+            if (logValidation && passValidation){
+            alert("Login successful \nEmail:" + email.value +  "\nPassword:"  + pass.value)
+            const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/login?email=${email.value}&password=${pass.value}`
+            fetch(dataSend)
+                .then(function(){
+                    alert("request successful")
+                })
+                .catch(function(){
+                    alert("request failed")
+                })
+            } else if (!logValidation && !passValidation){
+                alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)
+            } else if (!logValidation){
+                alert("Error: Incorrect email \nEmail: " + email.value)
+            } else {
+                alert("Error: Incorrect password \nPassword: "+ pass.value)
+            }
+        }
 
 
 
@@ -110,8 +145,6 @@ window.onload = function () {
 
 
 
-
-        
 
 
 
