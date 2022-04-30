@@ -475,9 +475,39 @@ window.onload = function (){
 
     }   window.alert(message)
 
-
-
-
-
     }
+
+    //Week 07 -------------------------------------
+
+    const urlApi = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}&repeatPassword=${repeatPass.value}"
+
+
+    button.addEventListener("click", submitClick)
+
+    function submitClick(e){
+        (e).preventDefault
+        if (logValidation){
+        alert()
+        const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}`
+
+        fetch(dataSend)
+            .then(function(){
+                alert("request successful")
+            })
+            .catch(function(){
+                alert("request failed")
+            })
+
+
+        } else if (!logValidation && !passValidation){
+            alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)
+        } else if (!logValidation){
+            alert("Error: Incorrect email \nEmail: " + email.value)
+        } else {
+            alert("Error: Incorrect password \nPassword: "+ pass.value)
+        }
+
+
+
+
 }
