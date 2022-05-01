@@ -30,7 +30,7 @@ window.onload = function () {
 
 
         if (log.match(emailRegx)) {
-            console.log("good")
+            return true
         } else {
             span1.textContent = "invalid email"
             span1.style.color = "red"
@@ -105,10 +105,10 @@ window.onload = function () {
             const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/login?email=${email.value}&password=${pass.value}`
             fetch(dataSend)
                 .then(function(){
-                    alert("request successful")
+                    alert("Request successful")
                 })
                 .catch(function(){
-                    alert("request failed")
+                    alert("Request failed")
                 })
             } else if (!logValidation && !passValidation){
                 alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)

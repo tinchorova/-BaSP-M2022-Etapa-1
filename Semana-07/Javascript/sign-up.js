@@ -1,10 +1,7 @@
 window.onload = function (){
 
 
-    function mensaje (nombre){
-        console.log("hola", nombre)
-    }
-    mensaje("maria  ")
+
     //vars
 
     var firstName = document.getElementById("firstName")
@@ -34,7 +31,7 @@ window.onload = function (){
     var repeatPassb = false
 
 
-   
+
 
     //events
 
@@ -270,12 +267,12 @@ window.onload = function (){
 
         if (addressValue.indexOf(" ")>=0 && isNaN(addressValue[addressValue.indexOf(' ')-1]) &&
             !isNaN(addressValue[addressValue.indexOf(' ')+1])){
-            addressValueb = true
+            addressb = true
         } else {
             span6.textContent = "invalid address"
             span6.style.color = "red"
             address.style.borderColor = "red"
-            addressValue = false
+            addressb = false
         }
     }
 
@@ -291,9 +288,21 @@ window.onload = function (){
 
     function localidadBlurEvent()
     {
+       if (!validateLocation()){
+        span7.textContent = "invalid location"
+        span7.style.color = "red"
+        localidadb = false
+       }else{
+           localidadb = true
+       }
+        
+
+    }
+
+
+    function validateLocation(){
 
         var letterC = 0;
-
         var va2 = document.getElementById("localidad").value.toLowerCase();
 
         for (var i = 0; i < va2.length; i++)
@@ -304,7 +313,6 @@ window.onload = function (){
                 {
                     letterC+=1;
                 }
-
                 if (letterC>=3)
                 {
                     return true;
@@ -312,26 +320,9 @@ window.onload = function (){
             }
         }
 
-        span7.textContent = "invalid localidad"
-        span7.style.color = "red"
-        localidadb = false
-
     }
-    // function localidadBlurEvent(){
-
-    //     var localidadValue = localidad.value
-    //     var localidadRegx = /[0-9]{3,15}/
 
 
-    //     if (localidadValue.match(localidadRegx)) {
-    //        
-    //     } else {
-    //         span7.textContent = "invalid localidad"
-    //         span7.style.color = "red"
-    //        localidad.style.borderColor = "red"
-
-    //     }
-    // }
 
     function localidadFocusEvent(){
         span7.textContent = ""
@@ -344,8 +335,6 @@ window.onload = function (){
     function postCodeBlurEvent(){
 
         var postCodeValue = postCode.value
-        
-
 
         if (!(isNaN(postCodeValue)) && (postCodeValue.length>3) && (postCodeValue.length<6)){
             span8.textContent = ""
@@ -371,7 +360,6 @@ window.onload = function (){
 
         var log = email.value
         var emailRegx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
-
 
         if (log.match(emailRegx)) {
             span9.textContent = ""
@@ -417,9 +405,8 @@ window.onload = function (){
 
     function repeatPassBlurEvent(){
 
-        var repeatPasswordValue = repeatPassword.value
+        var repeatPasswordValue = repeatPass.value
         var passValue = pass.value
-
 
         if (repeatPasswordValue = passValue) {
             span11.textContent = ""
@@ -463,7 +450,7 @@ window.onload = function (){
         }if (!addressb){
             message += "Address is wrong" + newLine
         }if (!localidadb){
-            message += "Localidad is wrong" + newLine
+            message += "Location is wrong" + newLine
         }if (!postCodeb){
             message += "Post code is wrong" + newLine
         }if (!emailb){
@@ -481,33 +468,37 @@ window.onload = function (){
 
     const urlApi = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}&repeatPassword=${repeatPass.value}"
 
-
-    button.addEventListener("click", submitClick)
+    btn.addEventListener("click", submitClick)
 
     function submitClick(e){
         (e).preventDefault
-        if (logValidation){
-        alert()
-        const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}`
+
+        const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}`
 
         fetch(dataSend)
-            .then(function(){
-                alert("request successful")
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(responseJson){
+                if (responseJson.success){
+                    window.alert("Request Succesful" + responseJson.msg)
+                }else{
+                    throw new Error("Request failed")
+                }
             })
             .catch(function(){
-                alert("request failed")
+                console.log("error")
             })
-
-
-        } else if (!logValidation && !passValidation){
-            alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)
-        } else if (!logValidation){
-            alert("Error: Incorrect email \nEmail: " + email.value)
-        } else {
-            alert("Error: Incorrect password \nPassword: "+ pass.value)
         }
 
 
 
-
+        // } else if (!logValidation && !passValidation){
+        //     alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)
+        // } else if (!logValidation){
+        //     alert("Error: Incorrect email \nEmail: " + email.value)
+        // } else {
+        //     alert("Error: Incorrect password \nPassword: "+ pass.value)
+        // }
+    }
 }
