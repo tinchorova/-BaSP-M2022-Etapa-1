@@ -5,10 +5,13 @@ header {
 
 body{
     height:100%;
+    font-family: 'Poppins', sans-serif;
 }
 #sidebar{
     display: flex;
-    z-index: -1;
+
+    width: 30%;
+    height: 100%;
 }
 
 main {
@@ -18,7 +21,7 @@ main {
     align-items: center;
     margin-top: 100px;
     margin-left: 33%;
-    height: 70%;
+
 }
 
 main button {
@@ -48,9 +51,24 @@ form {
 form div {
     display: flex;
 
-    width: 300px;
+    width: 200px;
 }
 
+form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #373867;
+    border-radius: 3px;
+}
+
+form label{
+    color: #373867;
+    font-weight: bold;
+}
+
+div p{
+    color: #373867;
+}
 /* form div :nth-child(1){
     display: flex;
     align-self: left;
@@ -66,17 +84,19 @@ form div :nth-child(2){
 }
 
 footer {
-    display: none;
-    /* flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     margin-top: auto;
-    z-index: 3; */
+    width: 100%;
 }
 
 @media  only screen and (max-width: 768px){
 
 #sidebar{
     display: none;
+}
+
+main{
+    margin-left: 0px;
 }
 }

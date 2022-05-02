@@ -351,7 +351,7 @@ window.onload = function (){
             span9.textContent = "invalid email"
             span9.style.color = "red"
             email.style.borderColor = "red"
-            emailb=false
+            emailb = false
         }
     }
 
@@ -409,8 +409,10 @@ window.onload = function (){
     }
 
     //--- button
-
+    
     btn.addEventListener('click', alertSubmit)
+
+
 
     function alertSubmit(){
         var message = ""
@@ -419,30 +421,33 @@ window.onload = function (){
         if ((firstNameb && lastNameb && dnib && dateb && phoneb && addressb &&
             localidadb && postCodeb && emailb && passb && repeatPassb) == true) {
             window.alert("Success!")
+            
         }
-        else{if (!firstNameb){
+        else
+        {
+            if (!firstNameb){
             message += "First name is wrong" + newLine
-        }if (!lastNameb){
-            message += "Last name is wrong" + newLine
-        }if (!dnib){
-            message += "DNI is wrong" + newLine
-        }if (!dateb){
-            message += "Date is wrong" + newLine
-        }if (!phoneb){
-            message += "Phone is wrong" + newLine
-        }if (!addressb){
-            message += "Address is wrong" + newLine
-        }if (!localidadb){
-            message += "Location is wrong" + newLine
-        }if (!postCodeb){
-            message += "Post code is wrong" + newLine
-        }if (!emailb){
-            message += "Email is wrong" + newLine
-        }if (!passb){
-            message += "Password is wrong" + newLine
-        }if (!repeatPass){
-            message += "Passwords does not match" + newLine
-        }window.alert(message)}
+            }if (!lastNameb){
+                message += "Last name is wrong" + newLine
+            }if (!dnib){
+                message += "DNI is wrong" + newLine
+            }if (!dateb){
+                message += "Date of birth is wrong" + newLine
+            }if (!phoneb){
+                message += "Phone is wrong" + newLine
+            }if (!addressb){
+                message += "Address is wrong" + newLine
+            }if (!localidadb){
+                message += "Location is wrong" + newLine
+            }if (!postCodeb){
+                message += "Post code is wrong" + newLine
+            }if (!emailb){
+                message += "Email is wrong" + newLine
+            }if (!passb){
+                message += "Password is wrong" + newLine
+            }if (!repeatPassb){
+                message += "Passwords does not match" + newLine
+            }window.alert(message)}
 
             const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${date.value}&phone=${phone.value}&address=${address.value}&city=${localidad.value}&zip=${postCode.value}&email=${email.value}&password=${pass.value}`
             fetch(dataSend)
@@ -457,9 +462,22 @@ window.onload = function (){
                     }
                 })
                 .catch(function(){
-                })
 
-        localStorage.setItem("first name", firstName.value)
+                })
+            localStorage.setItem("first name", firstName.value)
+            localStorage.setItem("last name", lastName.value)
+            localStorage.setItem("dni", dni.value)
+            localStorage.setItem("dob", date.value)
+            localStorage.setItem("phone", phone.value)
+            localStorage.setItem("address", address.value)
+            localStorage.setItem("city", localidad.value)
+            localStorage.setItem("zip", postCode.value)
+            localStorage.setItem("email", email.value)
+            localStorage.setItem("password", pass.value)
+            localStorage.setItem("Rpassword", repeatPass.value)
 
     }
+
+
+
 }
