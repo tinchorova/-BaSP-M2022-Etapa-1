@@ -1,7 +1,5 @@
 window.onload = function (){
 
-
-
     //vars
 
     var firstName = document.getElementById("firstName")
@@ -29,9 +27,6 @@ window.onload = function (){
     var emailb = false
     var passb = false
     var repeatPassb = false
-
-
-
 
     //events
 
@@ -71,7 +66,6 @@ window.onload = function (){
     myForm.addEventListener('submit', function(e) {
         e.preventDefault();
     })
-
 
     //arrays
 
@@ -114,14 +108,13 @@ window.onload = function (){
             span2.textContent = "invalid last name"
             span2.style.color = "red"
             lastName.style.borderColor = "red"
-            lastName = false
+            lastNameb = false
         }
     }
 
     function lastNameFocusEvent(){
         span2.textContent = ""
         lastName.style.borderColor = ""
-
     }
 
     //----
@@ -129,8 +122,6 @@ window.onload = function (){
     function dniBlurEvent(){
 
         var dniValue = dni.value
-        
-
 
         if (!(isNaN(dniValue)) && (dniValue.length>6)){
             span3.textContent = ""
@@ -162,9 +153,7 @@ window.onload = function (){
                 {
                     return false
                 }
-
             }
-
         }
 
         if (isNaN(va[0]) || isNaN(va[1]) || isNaN(va[3]) || isNaN(va[4]) || isNaN(va[6]) ||
@@ -175,9 +164,9 @@ window.onload = function (){
 
         var parts = va.split("/");
 
-        var day = parseInt(parts[0], 10);
+        var month  = parseInt(parts[0], 10);
 
-        var month = parseInt(parts[1], 10);
+        var day = parseInt(parts[1], 10);
 
         var year = parseInt(parts[2], 10);
 
@@ -264,7 +253,6 @@ window.onload = function (){
         var addressValue = address.value
         var addressValueCount = [abc] + " " + [num]
 
-
         if (addressValue.indexOf(" ")>=0 && isNaN(addressValue[addressValue.indexOf(' ')-1]) &&
             !isNaN(addressValue[addressValue.indexOf(' ')+1])){
             addressb = true
@@ -283,8 +271,6 @@ window.onload = function (){
     }
 
     //----
-   
-
 
     function localidadBlurEvent()
     {
@@ -295,10 +281,7 @@ window.onload = function (){
        }else{
            localidadb = true
        }
-        
-
     }
-
 
     function validateLocation(){
 
@@ -321,7 +304,6 @@ window.onload = function (){
         }
 
     }
-
 
 
     function localidadFocusEvent(){
@@ -437,7 +419,8 @@ window.onload = function (){
         if ((firstNameb && lastNameb && dnib && dateb && phoneb && addressb &&
             localidadb && postCodeb && emailb && passb && repeatPassb) == true) {
             window.alert("Success!")
-        }if (!firstNameb){
+        }
+        else{if (!firstNameb){
             message += "First name is wrong" + newLine
         }if (!lastNameb){
             message += "Last name is wrong" + newLine
@@ -459,46 +442,24 @@ window.onload = function (){
             message += "Password is wrong" + newLine
         }if (!repeatPass){
             message += "Passwords does not match" + newLine
+        }window.alert(message)}
 
-    }   window.alert(message)
+            const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${date.value}&phone=${phone.value}&address=${address.value}&city=${localidad.value}&zip=${postCode.value}&email=${email.value}&password=${pass.value}`
+            fetch(dataSend)
+                .then(function(response){
+                    return response.json()
+                })
+                .then(function(responseJson){
+                    if (responseJson.success){
+                        window.alert("Request Succesful" + responseJson.msg)
+                    }else{
+                        throw new Error("Request failed")
+                    }
+                })
+                .catch(function(){
+                })
 
-    }
+        localStorage.setItem("first name", firstName.value)
 
-    //Week 07 -------------------------------------
-
-    const urlApi = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}&repeatPassword=${repeatPass.value}"
-
-    btn.addEventListener("click", submitClick)
-
-    function submitClick(e){
-        (e).preventDefault
-
-        const dataSend = `https://basp-m2022-api-rest-server.herokuapp.com/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&date=${date.value}&phone=${phone.value}&address=${address.value}&localidad=${localidad.value}&postCode=${postCode.value}&email=${email.value}&password=${pass.value}`
-
-        fetch(dataSend)
-            .then(function(response){
-                return response.json()
-            })
-            .then(function(responseJson){
-                if (responseJson.success){
-                    window.alert("Request Succesful" + responseJson.msg)
-                }else{
-                    throw new Error("Request failed")
-                }
-            })
-            .catch(function(){
-                console.log("error")
-            })
-        }
-
-
-
-        // } else if (!logValidation && !passValidation){
-        //     alert("Error: Email and password incorrect \nEmail: " + email.value + "\nPassword: " + pass.value)
-        // } else if (!logValidation){
-        //     alert("Error: Incorrect email \nEmail: " + email.value)
-        // } else {
-        //     alert("Error: Incorrect password \nPassword: "+ pass.value)
-        // }
     }
 }
