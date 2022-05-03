@@ -28,6 +28,8 @@ window.onload = function (){
     var passb = false
     var repeatPassb = false
 
+    values()
+
     //events
 
     firstName.addEventListener('focus', firstNameFocusEvent)
@@ -302,7 +304,6 @@ window.onload = function (){
                 }
             }
         }
-
     }
 
 
@@ -409,10 +410,8 @@ window.onload = function (){
     }
 
     //--- button
-    
+
     btn.addEventListener('click', alertSubmit)
-
-
 
     function alertSubmit(){
         var message = ""
@@ -421,7 +420,6 @@ window.onload = function (){
         if ((firstNameb && lastNameb && dnib && dateb && phoneb && addressb &&
             localidadb && postCodeb && emailb && passb && repeatPassb) == true) {
             window.alert("Success!")
-            
         }
         else
         {
@@ -456,13 +454,13 @@ window.onload = function (){
                 })
                 .then(function(responseJson){
                     if (responseJson.success){
-                        window.alert("Request Succesful" + responseJson.msg)
+                        window.alert("Request Succesful " + responseJson.msg)
                     }else{
                         throw new Error("Request failed")
                     }
                 })
                 .catch(function(){
-
+                    alert("Eror")
                 })
             localStorage.setItem("first name", firstName.value)
             localStorage.setItem("last name", lastName.value)
@@ -477,7 +475,17 @@ window.onload = function (){
             localStorage.setItem("Rpassword", repeatPass.value)
 
     }
-
-
-
+    function values(){
+        firstName.value = localStorage.getItem("first name")
+        lastName.value = localStorage.getItem("last name")
+        dni.value = localStorage.getItem("dni")
+        date.value = localStorage.getItem("dob")
+        phone.value = localStorage.getItem("phone")
+        address.value = localStorage.getItem("address")
+        localidad.value = localStorage.getItem("city")
+        postCode.value = localStorage.getItem("zip")
+        email.value = localStorage.getItem("email")
+        pass.value = localStorage.getItem("password")
+        repeatPass.value = localStorage.getItem("Rpassword")
+    }
 }

@@ -19,3 +19,6 @@ Aprendimos los conceptos básicos de Javascript e hicimos 6 bloques de ejercicio
 
 Semana-06
 En esta semana vamos a agregar una página de login y de registro de empleados que sea funcional utilizando Javascript.
+
+Semana-07
+Agregamos conceptos de back end al proyecto, almacenando información en local storage

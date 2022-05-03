@@ -6,7 +6,6 @@ window.onload = function () {
     var span1 = document.getElementById("span1")
     var span2 = document.getElementById("span2")
 
-
     email.addEventListener('focus', emailFocusEvent)
     email.addEventListener('blur', emailBlurEvent)
     pass.addEventListener('focus', passFocusEvent)
@@ -18,8 +17,6 @@ window.onload = function () {
         formValidation()
 
     })
-
-    
 
     //FUNCIONES
 
@@ -73,26 +70,7 @@ window.onload = function () {
         var logValidation = (log.match(emailRegx))
         var passValidation = (passValue.match(passRegx))
 
-        // if  (logValidation && passValidation){
-        //     alert("Log in successful!   " + "username: " +(log) + "   password: " + (passValue))
-        // } else if (logValidation || passValidation) {
-        //     alert("Incorrect email or password")
-        // }
-
-
         // --------------------------- Week 07
-
-        // fetch("https://rickandmortyapi.com/api/character")
-        // .then(function (response) {
-        //     console.log (response)
-        //     return response.json()
-        // })
-        // .catch(function(error) {
-        //     console.log("Error: ", error)
-        // })
-
-
-        // var queryParams = "username=rose@radiumrocket.com&password=BaSP2022"
 
         const urlApi = "https://basp-m2022-api-rest-server.herokuapp.com/login"
 
